@@ -90,11 +90,11 @@ def get_all_alarms():
         
         # Adjust individual prayer alarm buffers here (in minutes)
         alarms = {
-            "Fajr":    subtract_buffer(raw_fajr,    buffer_mins=30, is_pm=False),
+            "Fajr":    subtract_buffer(raw_fajr,    buffer_mins=20, is_pm=False),
             "Zuhr":    subtract_buffer(raw_zuhr,    buffer_mins=15, is_pm=True),
             "Asr":     subtract_buffer(raw_asr,     buffer_mins=20, is_pm=True),
             "Maghrib": subtract_buffer(raw_maghrib, buffer_mins=10, is_pm=True),
-            "Isha":    subtract_buffer(raw_isha,    buffer_mins=20, is_pm=True)
+            "Isha":    subtract_buffer(raw_isha,    buffer_mins=15, is_pm=True)
         }
         
         logger.info(f"Successfully calculated alarms. Fajr set to {alarms['Fajr']}.")
